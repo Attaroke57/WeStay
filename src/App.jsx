@@ -1,10 +1,20 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import AdminLayout from "./layout/adminlayout"
+import Dashboard from "./pages/admin/dashboard"
+import Properties from "./pages/admin/properties"
+import Users from "./pages/admin/users"
+
 function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900">
-      <h1 className="text-4xl font-bold text-white">
-        Tailwind Aktif 🔥
-      </h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="properties" element={<Properties />} />
+          <Route path="users" element={<Users />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
