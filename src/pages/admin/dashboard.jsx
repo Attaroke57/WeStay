@@ -1,11 +1,10 @@
-// src/pages/admin/dashboard.jsx
 import { useState } from 'react';
 import SummaryCards from '../../components/dashboard/summarycard';
 import RevenueChart from '../../components/dashboard/revenuecharts';
 import OccupancyChart from '../../components/dashboard/occupancychart';
 import PaymentTable from '../../components/dashboard/paymenttable';
+import DashboardSidebar from '../../components/dashboard/dashboardsidebar';
 
-// Dummy Data
 const summaryData = {
   totalRevenue: 45600000,
   revenueChange: 12,
@@ -45,38 +44,43 @@ export default function Dashboard() {
   const [timeRange, setTimeRange] = useState('6months');
 
   return (
-    <div>
-      {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
-          <p className="text-sm text-gray-500 mt-1">Monitoring bisnis kos Anda</p>
+    <div className="flex flex-col lg:flex-row gap-4 md:gap-6 p-4 md:p-6 max-w-full">
+      {/* Main Content */}
+      <div className="flex-1 min-w-0">
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 md:mb-6 gap-3">
+          <div>
+            <h1 className="text-xl md:text-2xl font-bold text-gray-900">Dashboard</h1>
+            <p className="text-xs md:text-sm text-gray-500 mt-1">Monitoring bisnis kos Anda</p>
+          </div>
+          <div className="flex items-center gap-2">
+            <select 
+              value={timeRange}
+              onChange={(e) => setTimeRange(e.target.value)}
+              className="w-full sm:w-auto px-3 md:px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="1month">Bulan Ini</option>
+              <option value="3months">3 Bulan</option>
+              <option value="6months">6 Bulan</option>
+              <option value="1year">Tahun Ini</option>
+            </select>
+          </div>
         </div>
-        <div className="flex items-center gap-2">
-          <select 
-            value={timeRange}
-            onChange={(e) => setTimeRange(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="1month">Bulan Ini</option>
-            <option value="3months">3 Bulan</option>
-            <option value="6months">6 Bulan</option>
-            <option value="1year">Tahun Ini</option>
-          </select>
+
+        <SummaryCards data={summaryData} />
+
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 md:gap-6 mb-4 md:mb-6">
+          <RevenueChart data={revenueData} />
+          <OccupancyChart data={occupancyData} />
         </div>
+
+        <PaymentTable payments={upcomingPayments} />
       </div>
 
-      {/* Summary Cards */}
-      <SummaryCards data={summaryData} />
-
-      {/* Charts Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-        <RevenueChart data={revenueData} />
-        <OccupancyChart data={occupancyData} />
-      </div>
-
-      {/* Upcoming Payments Table */}
-      <PaymentTable payments={upcomingPayments} />
+      {/* Sidebar */}
+      <aside className="lg:w-80 xl:w-96 flex-shrink-0">
+        <DashboardSidebar />
+      </aside>
     </div>
   );
 }
