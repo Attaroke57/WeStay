@@ -12,7 +12,7 @@ export default function RevenueChart({ data }) {
   const range = maxRevenue - minRevenue;
 
   return (
-    <div className="xl:col-span-2 bg-white rounded-lg md:rounded-xl shadow-sm p-4 md:p-6 border border-gray-100">
+    <div className="bg-white rounded-lg md:rounded-xl shadow-sm p-4 md:p-6 border border-gray-100">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 md:mb-6 gap-2">
         <div>
           <h3 className="text-base md:text-lg font-semibold text-gray-900">Pendapatan 6 Bulan Terakhir</h3>

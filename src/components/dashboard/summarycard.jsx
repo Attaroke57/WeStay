@@ -10,7 +10,7 @@ export default function SummaryCards({ data }) {
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 md:gap-4 mb-4 md:mb-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 md:gap-4">
       {/* Total Pendapatan */}
       <div className="bg-white rounded-lg md:rounded-xl shadow-sm p-4 md:p-6 border border-gray-100">
         <div className="flex items-center justify-between mb-3 md:mb-4">
@@ -85,3 +85,4 @@ export default function SummaryCards({ data }) {
     </div>
   );
 }
+
