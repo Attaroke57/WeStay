@@ -1,3 +1,4 @@
+
 export default function OccupancyChart({ data }) {
   return (
     <div className="bg-white rounded-lg md:rounded-xl shadow-sm p-4 md:p-6 border border-gray-100">

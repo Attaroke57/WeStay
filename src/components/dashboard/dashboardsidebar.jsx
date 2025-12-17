@@ -8,7 +8,7 @@ const notifications = [
 
 export default function DashboardSidebar() {
   return (
-    <div className="space-y-4 md:space-y-6 sticky top-4">
+    <div className="space-y-4 md:space-y-6">
       {/* Quick Actions */}
       <div className="bg-white rounded-lg md:rounded-xl shadow-sm p-4 md:p-6 border border-gray-100">
         <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">Quick Actions</h3>
