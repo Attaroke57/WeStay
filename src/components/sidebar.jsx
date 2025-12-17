@@ -8,7 +8,7 @@ export default function Sidebar({ open, setOpen }) {
   const menuItems = [
     { label: "Dashboard", path: "/admin", icon: LayoutDashboard },
     { label: "Properti", path: "/admin/properties", icon: Home },
-    { label: "Users", path: "/admin/users", icon: Users },
+    { label: "Pelanggan", path: "/admin/users", icon: Users },
   ];
 
   return (
