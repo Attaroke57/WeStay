@@ -1,18 +1,4 @@
-// src/services/propertyService.js
-
-/**
- * Property Service - Handle semua API calls untuk properti
- *
- * Usage:
- * import { propertyService } from '../services/propertyService';
- *
- * const properties = await propertyService.getAllProperties();
- * await propertyService.createProperty(data);
- * await propertyService.updateProperty(id, data);
- * await propertyService.deleteProperty(id);
- */
-
-const API_URL ="http://localhost:3001/api";
+const API_URL = "https://property-api-blush.vercel.app/api";
 
 export const propertyService = {
   /**
