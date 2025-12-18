@@ -10,6 +10,7 @@ import {
   ChevronDown,
   ChevronRight,
   X,
+  Package,
 } from "lucide-react";
 
 export default function Sidebar({ open, setOpen }) {
@@ -27,6 +28,7 @@ export default function Sidebar({ open, setOpen }) {
 
   const menuItems = [
     { label: "Dashboard", path: "/admin", icon: LayoutDashboard },
+    { label: "Monitor Aset", path: "/admin/assets", icon: Package },
     { label: "Properti", path: "/admin/properties", icon: Home },
     { label: "Pelanggan", path: "/admin/users", icon: Users },
 
