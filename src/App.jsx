@@ -10,10 +10,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Redirect root to admin dashboard */}
+        {/* Redirect root */}
         <Route path="/" element={<Navigate to="/admin" replace />} />
-        
-        {/* Admin Routes */}
+
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="properties" element={<Properties />} />
@@ -21,7 +20,6 @@ function App() {
           <Route path="assets" element={<Assets />} />
         </Route>
 
-        {/* 404 Not Found */}
         <Route path="*" element={<Navigate to="/admin" replace />} />
       </Routes>
     </BrowserRouter>
