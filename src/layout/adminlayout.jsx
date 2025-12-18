@@ -9,18 +9,20 @@ export default function AdminLayout() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Fixed Sidebar */}
+      {/* SIDEBAR (FIXED) */}
       <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
 
-      {/* Main Content with Left Margin for Sidebar */}
+      {/* CONTENT WRAPPER */}
       <div className="flex flex-col min-h-screen ml-0 md:ml-64 transition-all duration-300">
-        {/* Top Navbar */}
+        
+        {/* NAVBAR (FIXED) */}
         <Navbar setOpen={setSidebarOpen} />
 
-        {/* Main Content Area - Scrollable */}
-        <main className="flex-1 overflow-auto">
+        {/* MAIN CONTENT */}
+        <main className="flex-1 overflow-auto pt-16 p-6">
           <Outlet />
         </main>
+
       </div>
     </div>
   );
