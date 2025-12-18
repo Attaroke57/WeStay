@@ -4,6 +4,7 @@ import AdminLayout from './layout/adminlayout';
 import Dashboard from './pages/admin/dashboard';
 import Properties from './pages/admin/properties';
 import Users from './pages/admin/users';
+import Assets from './pages/admin/assets';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route index element={<Dashboard />} />
           <Route path="properties" element={<Properties />} />
           <Route path="users" element={<Users />} />
+          <Route path="assets" element={<Assets />} />
         </Route>
 
         {/* 404 Not Found */}

@@ -1,6 +1,6 @@
 // src/components/sidebar.jsx
 import { Link, useLocation } from "react-router-dom";
-import { LayoutDashboard, Home, Users, X } from "lucide-react";
+import { LayoutDashboard, Home, Users, Package, X } from "lucide-react";
 
 export default function Sidebar({ open, setOpen }) {
   const location = useLocation();
@@ -9,6 +9,7 @@ export default function Sidebar({ open, setOpen }) {
     { label: "Dashboard", path: "/admin", icon: LayoutDashboard },
     { label: "Properti", path: "/admin/properties", icon: Home },
     { label: "Pelanggan", path: "/admin/users", icon: Users },
+    { label: "Monitor Aset", path: "/admin/assets", icon: Package },
   ];
 
   return (
