@@ -31,7 +31,34 @@ export default function Sidebar({ open, setOpen }) {
     { label: "Monitor Aset", path: "/admin/assets", icon: Package },
     { label: "Properti", path: "/admin/properties", icon: Home },
     { label: "Pelanggan", path: "/admin/users", icon: Users },
-    { label: "Monitor Aset", path: "/admin/assets", icon: Package },
+
+    {
+      id: "competitor-pricing",
+      label: "Competitor Pricing",
+      icon: TrendingUp,
+      hasSubmenu: true,
+      submenu: [
+        {
+          label: "Scraping Summary",
+          path: "/admin/pricing/scraping-summary",
+        },
+        {
+          label: "Scraping Tools",
+          path: "/admin/pricing/scraping-tools",
+        },
+      ],
+    },
+
+    {
+      label: "Price Monitoring",
+      path: "/admin/price-monitoring",
+      icon: DollarSign,
+    },
+    {
+      label: "Merchant & Voucher",
+      path: "/admin/merchant-voucher",
+      icon: FileText,
+    },
   ];
 
   return (
