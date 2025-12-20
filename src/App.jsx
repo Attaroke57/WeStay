@@ -9,6 +9,9 @@ import ScrapingSummaryPage from "./pages/admin/princing/sceaping-summary";
 import ScrapingToolsPage from "./pages/admin/princing/scraping-tools";
 import PriceMonitoringPage from "./pages/admin/price-monitoring";
 import MerchantVoucherPage from "./pages/admin/merchant-voucher";
+import DailyUnitMonitorPage from "./pages/admin/daily-unit";
+import MonthlyUnitMonitorPage from "./pages/admin/montly-unit";
+import UnitPerformancePage from "./pages/admin/unit-peformance";
 import Assets from './pages/admin/asset';
 
 function App() {
@@ -31,6 +34,9 @@ function App() {
 
           <Route path="price-monitoring" element={<PriceMonitoringPage />} />
           <Route path="merchant-voucher" element={<MerchantVoucherPage />} />
+          <Route path="daily-unit" element={<DailyUnitMonitorPage />} />
+          <Route path="monthly-unit" element={<MonthlyUnitMonitorPage />} />
+          <Route path="unit-performance" element={<UnitPerformancePage />} />
         </Route>
 
         <Route path="*" element={<Navigate to="/admin" replace />} />

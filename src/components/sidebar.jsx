@@ -11,6 +11,9 @@ import {
   ChevronRight,
   X,
   Package,
+  TornadoIcon,
+  Monitor,
+  PenSquare,
 } from "lucide-react";
 
 export default function Sidebar({ open, setOpen }) {
@@ -58,6 +61,21 @@ export default function Sidebar({ open, setOpen }) {
       label: "Merchant & Voucher",
       path: "/admin/merchant-voucher",
       icon: FileText,
+    },
+    {
+      label: "Daily Unit Monitor",
+      path: "/admin/daily-unit",
+      icon: TornadoIcon,
+    },
+    {
+      label: "Monthly Unit Monitor",
+      path: "/admin/monthly-unit",
+      icon: Monitor,
+    },
+    {
+      label: "Unit Performance",
+      path: "/admin/unit-performance",
+      icon: PenSquare,
     },
   ];
 
