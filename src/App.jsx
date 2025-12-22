@@ -8,11 +8,15 @@ import Users from "./pages/admin/users";
 import ScrapingSummaryPage from "./pages/admin/princing/sceaping-summary";
 import ScrapingToolsPage from "./pages/admin/princing/scraping-tools";
 import PriceMonitoringPage from "./pages/admin/price-monitoring";
-import MerchantVoucherPage from "./pages/admin/merchant-voucher";
 import DailyUnitMonitorPage from "./pages/admin/daily-unit";
 import MonthlyUnitMonitorPage from "./pages/admin/montly-unit";
 import UnitPerformancePage from "./pages/admin/unit-peformance";
 import Assets from './pages/admin/asset';
+import VoucherClaimsPage from "./pages/admin/merchant-voucher/claims";
+import CustomerPage from "./pages/admin/merchant-voucher/customer";
+import VoucherDashboardPage from "./pages/admin/merchant-voucher/dashboard";
+import MerchantPage from "./pages/admin/merchant-voucher/merchant";
+import VoucherPage from "./pages/admin/merchant-voucher/voucher";
 
 function App() {
   return (
@@ -32,8 +36,15 @@ function App() {
             <Route path="scraping-tools" element={<ScrapingToolsPage />} />
           </Route>
 
+          <Route path="merchant-voucher">
+            <Route path="dashboard" element={<VoucherDashboardPage />} />
+            <Route path="merchant" element={<MerchantPage />} />
+            <Route path="voucher" element={<VoucherPage />} />
+            <Route path="claims" element={<VoucherClaimsPage />} />
+            <Route path="customer" element={<CustomerPage />} />
+          </Route>
+
           <Route path="price-monitoring" element={<PriceMonitoringPage />} />
-          <Route path="merchant-voucher" element={<MerchantVoucherPage />} />
           <Route path="daily-unit" element={<DailyUnitMonitorPage />} />
           <Route path="monthly-unit" element={<MonthlyUnitMonitorPage />} />
           <Route path="unit-performance" element={<UnitPerformancePage />} />

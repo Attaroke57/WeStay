@@ -14,12 +14,17 @@ import {
   TornadoIcon,
   Monitor,
   PenSquare,
+  Store,
+  Gift,
+  CheckSquare,
+  UserCircle,
+  BarChart3,
 } from "lucide-react";
 
 export default function Sidebar({ open, setOpen }) {
   const location = useLocation();
   const [expandedMenus, setExpandedMenus] = useState({
-    "competitor-pricing": true,
+    "competitor-pricing": false,
   });
 
   const toggleMenu = (id) => {
@@ -57,11 +62,42 @@ export default function Sidebar({ open, setOpen }) {
       path: "/admin/price-monitoring",
       icon: DollarSign,
     },
+
+    // ===== MERCHANT & VOUCHER DENGAN DROPDOWN =====
     {
+      id: "merchant-voucher",
       label: "Merchant & Voucher",
-      path: "/admin/merchant-voucher",
       icon: FileText,
+      hasSubmenu: true,
+      submenu: [
+        {
+          label: "Voucher Dashboard",
+          path: "/admin/merchant-voucher/dashboard",
+          icon: BarChart3,
+        },
+        {
+          label: "Merchant",
+          path: "/admin/merchant-voucher/merchant",
+          icon: Store,
+        },
+        {
+          label: "Voucher",
+          path: "/admin/merchant-voucher/voucher",
+          icon: Gift,
+        },
+        {
+          label: "Voucher Claims",
+          path: "/admin/merchant-voucher/claims",
+          icon: CheckSquare,
+        },
+        {
+          label: "Customer",
+          path: "/admin/merchant-voucher/customer",
+          icon: UserCircle,
+        },
+      ],
     },
+
     {
       label: "Daily Unit Monitor",
       path: "/admin/daily-unit",
@@ -92,8 +128,8 @@ export default function Sidebar({ open, setOpen }) {
       {/* SIDEBAR */}
       <aside
         className={`
-          fixed top-0 left-0 z-50
-          w-64 h-screen
+          fixed top-0 left-0 z-64
+          w-67 h-screen
           bg-gray-900 text-white
           transform transition-transform duration-300
           ${open ? "translate-x-0" : "-translate-x-full"}
@@ -153,8 +189,8 @@ export default function Sidebar({ open, setOpen }) {
                   {expanded && (
                     <div className="ml-4 mt-1 space-y-1">
                       {item.submenu.map((sub) => {
-                        const active =
-                          location.pathname === sub.path;
+                        const active = location.pathname === sub.path;
+                        const SubIcon = sub.icon;
 
                         return (
                           <Link
@@ -169,7 +205,11 @@ export default function Sidebar({ open, setOpen }) {
                               }
                             `}
                           >
-                            <div className="w-2 h-2 rounded-full bg-current" />
+                            {SubIcon ? (
+                              <SubIcon className="w-4 h-4" />
+                            ) : (
+                              <div className="w-2 h-2 rounded-full bg-current" />
+                            )}
                             <span>{sub.label}</span>
                           </Link>
                         );
