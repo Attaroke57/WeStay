@@ -12,7 +12,6 @@ import {
 } from "lucide-react";
 import { propertyService } from "../../services/propertyService";
 
-// ============= MODAL COMPONENT =============
 
 function PropertyModal({ isOpen, property, onClose, onSave, isLoading }) {
   const [formData, setFormData] = useState({
